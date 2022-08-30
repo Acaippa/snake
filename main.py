@@ -1,62 +1,89 @@
 @namespace
-
 class SpriteKind:
     head = SpriteKind.create()
     body = SpriteKind.create()
 
-body = sprites.create(img("""
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 f f f 1 1 1 1 1 1 1
-            1 f f f f f 1 1 1 f f f f 1 1 1
-            1 f 1 1 1 1 1 1 1 1 1 1 f f 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 f 1 1
-            1 1 1 f 1 1 1 1 1 1 1 f 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        """), SpriteKind.player)
+# body = sprites.create(img("""
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+# """), SpriteKind.body)
 
-head = sprites.create(img("""
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-        """), SpriteKind.player)
+# head = sprites.create(img("""
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 f f f f f f 1 1 1 1 1
+#     1 1 1 f f 1 1 1 1 1 1 f f 1 1 1
+#     1 1 f 1 1 1 1 1 1 1 1 1 f f 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 f 1 1 1 1 1 1 1 f 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+#     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+# """), SpriteKind.player)
 
-body_list = []
-
-body_list.append(body)
+pos_list = [(56, 40), (40, 40), (24, 40)]
 
 directionX, directionY = 1, 0
 timer = 0
+timer1 = 0
 
-def move_head():
-    global directionX, directionY, timer
-    if game.runtime() - timer > 1000:
-        head.x += 16 * directionX
-        head.y += 16 * directionY
-        timer = game.runtime()
+
+def move():
+    global directionX, directionY, timer1
+    if game.runtime() - timer1 > 1000:
+        for i in range(len(pos_list)-1):
+            pos_list[i+1][0] = pos_list[i][0]
+            pos_list[i+1][1] = pos_list[i][1]
+
+        pos_list[0][0] += 16 * directionX
+        pos_list[0][1] += 16 * directionY
+        timer1 = game.runtime()
     else:
-        timer += 1
+        timer1 += 1
+
+def draw():
+    sprites.destroy_all_sprites_of_kind(1)
+    for i in range(len(pos_list)):
+        body = sprites.create(img("""
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+                """), 1)
+        body.x = pos_list[i][0]
+        body.y = pos_list[i][1]
 
 def input():
     global directionX, directionY
@@ -77,12 +104,11 @@ def input():
         directionY = -1
         directionX = 0
 
-def move_body():
-    global body_list
-    print(body_list)
-
 def update():
     input()
-    move_head()
+    move()
+    draw()
+    
+
 
 game.on_update(update)
